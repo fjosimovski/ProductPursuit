@@ -1,0 +1,24 @@
+%header.site--header.headroom.headroom--top.headroom--pinned{"data-auto-hide" => "true"}
+  .container
+    %a.brand{:href => "/"}
+      = render 'shared/logo'
+      = render 'shared/brand_title'
+    .site--header--nav
+      %ul.site--header--pages
+        %li.site--header--promo
+          %span
+            %a{:href => "/e/lean-startup-tools"}
+              %img{:alt => "Lean startup tools nav", :src => "https://s3.amazonaws.com/ph-s3/list-assets/lean-startup-tools-nav.png"}/
+        - unless user_signed_in?
+          %li= link_to "Log in", new_user_session_path
+        %li= link_to "About", about_path
+        %li.site--header--dropdown
+          = render 'shared/more_dropdown_menu'
+      %ul.site--header--actions
+        %li.site--header--post
+          %a.new-post-link{:class => (user_signed_in? ? "signed-in" : "")}
+        %li.site--header--notifications
+          %a.show-notifications{:href => "#"}
+      - if user_signed_in?
+        .site--header--avatar.site--header--dropdown
+          = render 'shared/user_dropdown_menu'

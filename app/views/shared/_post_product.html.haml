@@ -1,0 +1,26 @@
+.new-post-modal{:style => "display: none;"}
+  .new-post-wrapper
+    .modal-container.new
+      .new-post-header
+        POST A NEW PRODUCT
+      .new-post-subheader
+        Find something new and interesting? Hunt it!
+      .new-post.well
+        / %form#new_submission.new_submission{"accept-charset" => "UTF-8", :action => "new", :method => "post"}
+        /   %div{:style => "display:none"}
+        /     %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+        /     %input{:name => "authenticity_token", :type => "hidden", :value => "F7x7j38sVoXyIp1xd71cIVy/R6AOA1UsGE70+rIeJOA="}/
+        /   %input#submission_url.product-url.inputfield{:name => "submission[url]", :placeholder => "Product URL", :type => "url"}/
+        /   %br/
+        /   %input#submission_name.product-name.inputfield{:name => "submission[name]", :placeholder => "Product Name", :type => "text"}/
+        /   %br/
+        /   %input#submission_tagline.product-tagline.inputfield{:name => "submission[description]", :placeholder => "Description", :type => "text"}/
+        /   %br/
+        /   %input.new_post_submit{"data-loading-text" => "Hunting…", :name => "commit", :type => "submit", :value => "Hunt it"}/
+        = form_for :post, :validate => true, url: {action: "create", controller: "/posts"} do |p|
+          = p.url_field :url, :required => true, :placeholder => "Product URL"
+          = p.text_field :name, :required => true, :placeholder => "Product Name"
+          = p.text_field :description, :required => true, :placeholder => "Product Description", :maxlength => 60
+          = p.submit "Hunting..."
+
+
