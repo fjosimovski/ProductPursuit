@@ -1,0 +1,16 @@
+.container-main-head.container
+  .newsletter-box.well
+    %p Get the best new product discoveries in your inbox daily!
+    %form#new_subscriber.new_subscriber{"accept-charset" => "UTF-8", :action => "/subscribers", "data-remote" => "true", :method => "post"}
+      %div{:style => "display:none"}
+        %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+      %input#subscriber_email.inputfield{:name => "subscriber[email]", :placeholder => "Your email", :type => "email"}/
+      %input{:name => "commit", :type => "submit", :value => "Subscribe"}/
+  .search-box.search-logged
+    .search-form
+      .search-field
+        %input#q.inputfield{:autocapitalize => "off", :autocomplete => "off", :autocorrect => "off", :placeholder => "Search for products", :spellcheck => "false", :type => "text"}/
+      .powered-by{:style => "display: none;"}
+        search by
+        %a{:href => "http://www.algolia.com/?utm_source=producthunt&utm_medium=link&utm_campaign=producthunt_search", :target => "_blank", :title => "Algolia Realtime Search"}
+          %img{:alt => "Algoli Realtime Search", :src => "//www.algolia.com/assets/algolia128x40.png"}/

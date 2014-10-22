@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title Product Hunt
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body{:class => body_class_name}
+    = render 'layouts/header'
+    = render 'layouts/main_head_container'
+    .container-main.container
+      %p.notice= notice
+      %p.alert= alert
+      .yield-container
+        = yield

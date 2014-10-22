@@ -1,0 +1,7 @@
+%a{"data-dropdown-trigger" => "user-menu", "data-target" => "#"}= gravatar_for current_user, 32
+.dropdown-menu.dropdown-menu-user{"data-dropdown-menu" => "user-menu"}
+  %ul.dropdown-menu-list
+    %li= link_to "Profile", current_user
+    %li
+      %a{:href => "#"} Settings
+    %li= link_to('Log out', destroy_user_session_path, :method=>'delete')

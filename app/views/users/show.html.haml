@@ -1,0 +1,9 @@
+.user-heading
+  %a{:href => "#"}= gravatar_for @user, 200
+  %h2.user-name= @user.coy
+  %p.subtitle= @user.title
+  %p.join-date
+    User ##{@user.id}
+.posts
+  %ul.posts-group
+#showuser_end Hunting down older posts...
