@@ -3,16 +3,15 @@
 <head>
   <title>Product Hunt</title>
   <link href="/assets/style.css" media="all" rel="stylesheet">
-  
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="<%= @new_class %>">
+<body class="<%= body_class_name %>">
   <%= render 'layouts/header'%>
-
-
   <%= render 'layouts/main_head_container'%>
   <div class="container-main container">
+   <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
       <div class="yield-container">
         <%= yield %>
       </div>
