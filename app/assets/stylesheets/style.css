@@ -1,4 +1,4 @@
-
+    
 .atwho-view {
     position: absolute;
     top: 0;
@@ -8184,7 +8184,7 @@ body.mobile .atwho-view.with-arrow--bottom ul li:last-child.cur:after {
     top: 50%;
     margin-top: -3px;
     right: 0px;
-    background-image: url(/assets/icon-dropdown-c348f39ebbdeda65eeea600431975167.png);
+    background-image: url(/assets/icon-dropdown.png);
     background-repeat: no-repeat;
 }
 
@@ -8265,7 +8265,7 @@ body.mobile .atwho-view.with-arrow--bottom ul li:last-child.cur:after {
 }
 
 .site--header--nav .site--header--actions .site--header--post a {
-    background-image: url(/assets/icon-post-e8740f8eeb632caded42aa7d0c45c1b6.png);
+    background-image: url(/assets/icon-post.png);
     background-repeat: no-repeat;
 }
 
@@ -8311,7 +8311,7 @@ body.mobile .atwho-view.with-arrow--bottom ul li:last-child.cur:after {
 }
 
 .site--header--nav .site--header--actions .site--header--notifications a {
-    background-image: url(/assets/icon-notifications-a5bfd178247f2981391c8dced14b0e31.png);
+    background-image: url(/assets/icon-notifications.png);
     background-repeat: no-repeat;
 }
 
