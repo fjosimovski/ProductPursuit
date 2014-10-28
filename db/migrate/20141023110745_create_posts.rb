@@ -4,8 +4,10 @@ class CreatePosts < ActiveRecord::Migration
       t.string :name
       t.string :description
       t.string :url
+      t.integer :user_id
 
       t.timestamps
-    end
+  end
+  add_index :posts, [:user_id, :created_at]
   end
 end
