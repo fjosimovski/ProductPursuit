@@ -10,10 +10,5 @@ class UsersController < ApplicationController
   
   def destroy
     @user = User.find(params[:id])
-  end
-
-  private
-  def signed_in_user
-    redirect_to new_user_session_path, alert: "Please sign in." unless signed_in?
-  end
+  end  
 end

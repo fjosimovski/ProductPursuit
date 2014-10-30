@@ -1,0 +1,39 @@
+.posts
+  .day.today
+    - @posts.each do |day, posts|
+
+      %time.date{:datetime => "2014-10-28"}
+        %h4.day-name
+        %h4.day-name 
+          =date_name(h day)
+        =  Date.parse(day).strftime("%B %d")
+      %ul.posts-group
+        - posts.each do |post|
+          %li.post
+            .upvote{"data-id" => "10134", "data-type" => "post"}
+              %a.upvote-link{:href => "#"}
+              %span.vote-count{"data-id" => "10134"} 76
+            .url
+              =link_to post.name, post.url, :target => "_blank", :class => "post-url title"
+              .maker
+                %a.maker-badge{:href => "#"}
+                .maker-tooltip
+                  %span.user-name
+                    The maker of this product joined the comments
+              %span.post-tagline.description
+                = post.description
+            %a.view-discussion{"data-id" => "10134", "data-url" => "/posts/takes-io", :href => "/posts/takes-io"}
+              =image_tag("/assets/comment.png", :class => "comment-image")
+              %p.comment-count 0
+            .user-image-holder
+              =link_to gravatar_for(post.user, 32), user_path(post.user)
+                
+              %div{"data-tooltip-content" => "true"}
+                .user-hover-card
+                  %a{:href => "/thinker"}
+                    %img.twitter-rounded.user-image{:alt => "Fkuv7dw3", :height => "80", :src => "https://pbs.twimg.com/profile_images/456295121919561729/fkUV7Dw3.jpeg", :width => "80"}/
+                  %h3 Nick Frost
+                  %h4.user-headline Founder, StartupList
+                  %h4.user-username
+                    %a{:href => "/thinker"} @thinker
+            %br/
