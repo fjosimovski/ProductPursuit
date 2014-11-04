@@ -16,7 +16,31 @@
 //= require_tree .
 
 $(document).ready(function(){
-  $('.site--header--dropdown').click(function(){
+  $('.site--header--dropdown').click(function(event){
     $(this).children('.dropdown-menu').toggle();
+    event.stopPropagation();
   });
+
+  $('.new-post-link').click(function () {
+    if($(this).hasClass('signed-in'))
+    {
+      $(".new-post-modal").show();
+      $('body').addClass('showing-discussion');
+    }
+    else
+    {
+      $(".signup-prompt").show();
+    }
+  });
+
+  $(".close-signup-prompt").click(function () {
+    $(".signup-prompt").hide();
+  });
+
+  $(".close-discussion").click(function () {
+    $(".new-post-modal").hide();
+    $('body').removeClass('showing-discussion');
+
+  });
+
 });

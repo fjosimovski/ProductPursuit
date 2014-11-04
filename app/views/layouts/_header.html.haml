@@ -16,7 +16,7 @@
           = render 'shared/more_dropdown_menu'
       %ul.site--header--actions
         %li.site--header--post
-          %a.new-post-link{:href => "/new-post"}
+          %a.new-post-link{:class => (user_signed_in? ? "signed-in" : "")}
         %li.site--header--notifications
           %a.show-notifications{:href => "#"}
       - if user_signed_in?

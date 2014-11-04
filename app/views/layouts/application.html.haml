@@ -6,6 +6,9 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body{:class => body_class_name}
+    #close-discussion-panel.close-discussion-body.close-discussion{"data-path" => "/"}
+    = render 'shared/login_prompt'
+    = render 'shared/post_product'
     = render 'layouts/header'
     = render 'layouts/main_head_container'
     .container-main.container
