@@ -7,3 +7,7 @@ module UserHelper
   end
 end
   
+
+def signed_in_user
+  redirect_to new_user_session_path, alert: "Please sign in." unless signed_in?
+end
